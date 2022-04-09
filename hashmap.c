@@ -74,12 +74,13 @@ HashMap * createMap(long capacity) {
     return map;
 }
 
-void eraseMap(HashMap * map,  char * key) {    
+void eraseMap(HashMap * map,  char * key) { 
+    /*   
     long i = hash(key, map->capacity);
     if (searchMap(map, key) != NULL){
         
     }
-
+*/
 
 
 }

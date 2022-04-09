@@ -35,3 +35,9 @@ hashmap.c:78:10: error: unused variable 'i' [-Werror=unused-variable]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 b6f7f9e
+sá.,  9 de abr. de 2022 19:25:56: 
+ hashmap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+ tests:  7|4
+total_score: 30/70
+8a0c03e
