@@ -40,8 +40,19 @@ int is_equal(void* key1, void* key2){
 
 
 void insertMap(HashMap * map, char * key, void * value) {
+    if (searchMap(map, key) != NULL) return;
+    long i = hash(key, map->capacity);
+    Pair * par = createPair(key, value);
 
-
+    while (i < map->capacity){
+        if (map->buckets[i] == NULL || map->buckets[i]->key == NULL){
+            map->buckets[i] = par;
+            map->current = i;
+            map->size++;
+            return;
+        }
+        i++;
+    }
 }
 
 void enlarge(HashMap * map) {
@@ -52,18 +63,41 @@ void enlarge(HashMap * map) {
 
 
 HashMap * createMap(long capacity) {
+    HashMap* map = (HashMap*)malloc(sizeof(HashMap));
+    
+    map->buckets = (Pair**)malloc(capacity*sizeof(Pair*));
+    for (int i = 0; i < capacity; i++) map->buckets[i] = NULL;
+    map->size = 0;
+    map->capacity = capacity;
+    map->current = -1;
 
-    return NULL;
+    return map;
 }
 
 void eraseMap(HashMap * map,  char * key) {    
+    long i = hash(key, map->capacity);
+    if (searchMap(map, key) != NULL){
+        
+    }
+
 
 
 }
 
-Pair * searchMap(HashMap * map,  char * key) {   
+Pair * searchMap(HashMap * map,  char * key) {
+    //Si por algún motivo, hay una clave igual a la que se está buscando en un
+    //espacio adelantado, y se encuentra un NULL antes, no se encontrará la key.
+    long i = hash(key, map->capacity);
 
+    for (;i < map->capacity ; i++){
+        map->current = i;
+        if (map->buckets[i] == NULL) return NULL;
 
+        if (map->buckets[i]->key == NULL) return NULL;
+
+        if (is_equal(map->buckets[i]->key, key)) return map->buckets[i];
+
+    }
     return NULL;
 }
 

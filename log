@@ -1,0 +1,11 @@
+sá.,  9 de abr. de 2022 19:23:56: 
+ hashmap.c | 40 +++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 37 insertions(+), 3 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function 'eraseMap':
+hashmap.c:78:10: error: unused variable 'i' [-Werror=unused-variable]
+     long i = hash(key, map->capacity);
+          ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+8910fc5
