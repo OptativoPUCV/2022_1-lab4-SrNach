@@ -89,7 +89,7 @@ Pair * searchMap(HashMap * map,  char * key) {
     //espacio adelantado, y se encuentra un NULL antes, no se encontrará la key.
     long i = hash(key, map->capacity);
 
-    for (;i < map->capacity ; i++){
+    for (i ;i < map->capacity ; i++){
         map->current = i;
         if (map->buckets[i] == NULL) return NULL;
 
