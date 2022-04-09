@@ -47,3 +47,14 @@ sá.,  9 de abr. de 2022 19:30:49:
  tests:  8|3
 total_score: 40/70
 f3aa0b2
+sá.,  9 de abr. de 2022 19:35:23: 
+ hashmap.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function 'eraseMap':
+hashmap.c:77:10: error: unused variable 'i' [-Werror=unused-variable]
+     long i = hash(key, map->capacity);
+          ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+0ca4c09
